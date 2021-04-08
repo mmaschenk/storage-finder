@@ -1,0 +1,35 @@
+body {
+    background-color: white;
+}
+
+.storage-question {
+    font-weight: 700;
+}
+
+.info-icon {
+    float: right;
+}
+.info-icon img {
+    width: 25px;
+}
+
+.hide {
+    display: none;
+}
+
+.storage-questions span {
+    margin-right: 15px;
+}
+
+.storage-questions input[type=checkbox],
+.storage-questions input[type=radio] {
+    margin-right: 5px;
+}
+
+.solution {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+    min-height: 100px;
+}
