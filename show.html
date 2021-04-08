@@ -36,8 +36,10 @@
                         selectortype = "radio";
                     }
                     element.answers.forEach(answer => {
+                        console.log(answer);
                         var id = answer["value"];
-                        var input = $("<input>", { name: "question-" + element.id, type: selectortype, value: answer["value"] });
+                        var input = $("<input>", { name: "question-" + element.id, type: selectortype, value: answer["value"], class: 'data-answers' });
+                        input.data( { excludes: answer.excludes })
                         var label = $("<label>", { for: id });                             
                         qdiv.append( $("<span>").append(label.append(input)));
                         label.append(answer["value"]);
@@ -47,15 +49,15 @@
 
                 scontainer = $( "#solutions");
                 info.solutions.forEach(element => {
-                var sid = "solution-" + element.id;
-                    var sdiv = $("<div>", { class: "solution col-5" });
+                    var sid = "solution-" + element.id;
+                    var sdiv = $("<span>", { class: "solution col-5", id: sid });
                     sdiv.append($("<div>", { class: "heading"})
                         .append($("<h4>", { html: element.name}))
                         .append($("<p>", { html: element.infoline})));
 
-                    scontainer.append($("<a>", { "data-toggle": "modal", "data-target": "#" + sid}).append(sdiv));
-                    scontainer.append($("<div>", { class: "modal  fade", id: sid, role: "dialog" })
-                        .append($("<div>", { class: "modal-dialog"})
+                    scontainer.append($("<a>", { "data-toggle": "modal", "data-target": "#" + sid + "-info"}).append(sdiv));
+                    scontainer.append($("<div>", { class: "modal  fade", id: sid + "-info", role: "dialog" })
+                        .append($("<div>", { class: "modal-dialog modal-lg"})
                             .append($("<div>", { class: "modal-content"} )
                                 .append($("<div>", { class: "modal-header", text: element.name }))
                                 .append($("<div>", { class: "modal-body", html: element.info  }))
@@ -72,6 +74,25 @@
                         }
                     });
                 });
+
+                $('input').on('change', function (e) {
+                    console.log('event',e);
+                    $(".solution").removeClass('greyed-out');
+                    $('input.data-answers').each(function( index ) {
+                        var ielt = $(this)
+                        //console.log( index + ": ", ielt );
+                        //console.log( 'val', ielt.val());
+                        //console.log( 'check', ielt.prop('checked'));
+                        //console.log('data', ielt.data('excludes'));
+                        var excludes = ielt.data('excludes');
+                        if (excludes && ielt.prop('checked')) {
+                            excludes.forEach( exclude => {
+                                console.log('excluding', 'solution-' + exclude);
+                                $("#solution-" + exclude).addClass('greyed-out');
+                            });
+                        }
+                    });
+                });
             });
 
             
@@ -81,7 +102,7 @@
     
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-4">
                 <div id=questions>

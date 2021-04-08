@@ -32,4 +32,14 @@ body {
     display: inline-block;
     margin: 10px;
     min-height: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.greyed-out {
+    background-color: #999;
+}
+
+.modal-dialog {
+    width: 70vw;
 }
