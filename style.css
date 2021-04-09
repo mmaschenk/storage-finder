@@ -1,24 +1,44 @@
 body {
     background-color: white;
+    font-family: Arial, sans-serif;
+    nofont-family: 'Roboto Slab', Roboto;
 }
 
+#questions {
+    padding-left: 45px;
+
+}
 .storage-question {
     font-weight: 700;
+    color: #00a6d6;
+    font-family: Arial;
+    
 }
 
 .info-icon {
     float: right;
 }
 .info-icon img {
-    width: 25px;
+    width: 15px;
 }
 
 .hide {
     display: none;
 }
 
+
+.storage-questions {
+    
+    padding-left: 10px;
+}
+
 .storage-questions span {
     margin-right: 15px;
+}
+
+div.storage-questions:hover {
+    border-left: 3px solid #00a6d6;
+    padding-left: 7px;
 }
 
 .storage-questions input[type=checkbox],
@@ -51,4 +71,21 @@ body {
     vertical-align: top;
     transition: opacity 1s;
     background-color: coral;
+}
+
+.top-bar {
+    background-color: #00a6d6;
+    line-height: 3.75rem;
+    padding-left: 73px !important;
+    font-family: Arial;
+}
+
+.title-bar {
+    padding: 16px;
+    padding-left: 0px;
+    border-bottom: 1px solid #9b9b9b;
+    margin-left: 73px;
+    width: 100%;
+    color: #9b9b9b;
+    margin-bottom: 40px;
 }
