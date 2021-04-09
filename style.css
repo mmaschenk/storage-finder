@@ -27,13 +27,9 @@ body {
 }
 
 .solution {
-    border: 1px solid black;
-    border-radius: 10px;
     display: inline-block;
     margin: 10px;
     min-height: 100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .greyed-out {
@@ -42,4 +38,16 @@ body {
 
 .modal-dialog {
     width: 70vw;
+}
+
+.tool {
+    display: inline-block;
+    width: calc(50% - 1.5em);
+    border: 1px solid black;
+    border-radius: 10px;
+    min-height: 100px;
+    nomax-height: 150px;
+    overflow: auto;
+    margin: 5px;
+    vertical-align: top;
 }

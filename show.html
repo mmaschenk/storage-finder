@@ -50,12 +50,15 @@
                 scontainer = $( "#solutions");
                 info.solutions.forEach(element => {
                     var sid = "solution-" + element.id;
-                    var sdiv = $("<span>", { class: "solution col-5", id: sid });
+                    var sdiv = $("<div>", { class: "solution", id: sid });
                     sdiv.append($("<div>", { class: "heading"})
                         .append($("<h4>", { html: element.name}))
                         .append($("<p>", { html: element.infoline})));
 
-                    scontainer.append($("<a>", { "data-toggle": "modal", "data-target": "#" + sid + "-info"}).append(sdiv));
+                    scontainer
+                        .append($("<div>", { class: "tool panel panel-default"})
+                            .append($("<a>", { "data-toggle": "modal", "data-target": "#" + sid + "-info"})
+                                .append(sdiv)));
                     scontainer.append($("<div>", { class: "modal  fade", id: sid + "-info", role: "dialog" })
                         .append($("<div>", { class: "modal-dialog modal-lg"})
                             .append($("<div>", { class: "modal-content"} )
