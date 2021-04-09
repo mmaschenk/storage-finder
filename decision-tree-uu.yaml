@@ -4,17 +4,25 @@ input:
   info: "Sharing your data means giving specific people access to your data. Depending on the data storage solution you can give access yourself or you have to ask an administrator or data manager to give access to specific people. You find more information about access rights (read, write) in the details per solution."
   answers:
     - value: "No"
+      excludes: [ n-schijf ]
     - value: "Yes, but only within the university"
-      excludes: [ laptop, tulaptop ]    
+      excludes: [ laptop, tulaptop, block, h-schijf, n-schijf]    
     - value: "Yes, with persons outside the university"
-      excludes: [ laptop, tulaptop, project, msteams ]
-- question: "Is the total amount of your data exceeding 1 TB?"
+      excludes: [ laptop, tulaptop, block, project, msteams, h-schijf, n-schijf, m-schijf, u-schijf ]
+- question: "What will be the total amount of your data?"
   id: 2
   info: "To give you an idea about size: 1 TB is around 330.000 photos (assuming that the average size photo is 3 MB) or more than 35 hours of 1080p video files. Compare: 10TB is the amount of data produced by the Hubble Space Telescope per year (figures 2018)"
   answers:
-    - value: "Yes"
-      excludes: [ laptop, tulaptop ]
-    - value: "No"
+    - value: "Under 100 Gigabyte"
+      excludes: [ n-schijf ]
+    - value: "100 GB - 1 TB"
+      excludes: [ laptop, tulaptop, n-schijf, h-schijf ]
+    - value: "1 TB - 25 TB"
+      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
+#    - value: "5 TB - 25 TB"
+#      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
+    - value: "More than that!"
+      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, msteams, h-schijf ]
 - question: "What is the classification of your data regarding INTEGRITY?"
   id: 3
   info: |
@@ -30,9 +38,13 @@ input:
     <p>&nbsp;</p>"
   answers:
     - value: "Low"
+      excludes: [ n-schijf ]
     - value: "Basic"
+      excludes: [ opencloud, n-schijf ]
     - value: "Sensitive"
+      excludes: [ opencloud, surfdrive, laptop, n-schijf, h-schijf, m-schijf, u-schijf, msteams, onedrive ]
     - value: "Critical"
+      excludes: [ opencloud, surfdrive, laptop, onedrive, tulaptop, msteams, h-schijf, m-schijf, u-schijf, block, n-schijf ]
 - question: "What is the classification of your data regarding CONFIDENTIALITY?"
   id: 4
   info: |
@@ -48,9 +60,13 @@ input:
     <p>Utrecht University states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://intranet.uu.nl/en/information-security-data-classification">UU intranet</a>.</p>
   answers:
     - value: "Low"
+      excludes: [ n-schijf ]
     - value: "Basic"
+      excludes: [ n-schijf, opencloud ]
     - value: "Sensitive"
+      excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop  ]
     - value: "Critical"
+      excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop, block, tulaptop, onedrive, msteams ]
 - question: "How much does your research depend on continuous availability?"
   id: 5
   info: |
@@ -65,55 +81,44 @@ input:
     <p>Utrecht University states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://intranet.uu.nl/en/information-security-data-classification">UU intranet</a>.</p>
   answers:
     - value: "Low"
+      excludes: [ n-schijf ]
     - value: "Basic"
+      excludes: [ n-schijf, laptop, tulaptop, opencloud ]
     - value: "Sensitive"
+      excludes: [ n-schijf, laptop, tulaptop, opencloud ]
     - value: "Critical"
+      excludes: [ n-schijf, laptop, tulaptop, opencloud, surfdrive, h-schijf, m-schijf, u-schijf ]
 - question: "Do you want to be able to access previous versions of the data yourself?"
   id: 6
   info: "<p>Some storage solutions allow you to access previous versions of the data yourself. In some cases you need the administrator to ask for previous versions.</p>"
   answers:
     - value: "Yes"
+      excludes: [ n-schijf ]
     - value: "No"
+      excludes: [ n-schijf ]
 - question: "Do you have special performance needs?"
   id: 7
   info: "<p>The more data and the more it is divided in files and directories, the more performance you need from the storage solution.</p>"
   answers:
     - value: "I am likely to have more than 1,000 files in a single directory, collected within two years."
+      excludes: [ n-schijf, onedrive, msteams, opencloud, surfdrive ]
     - value: "My data interactions demand high transaction or transfer rates."
-    - value: "No, performance is not an issue"
+      excludes: [ n-schijf, onedrive, opencloud, msteams, surfdrive ]
   multi: true
 - question: "How do you want to access your data?"
   id: 8
   answers:
     - value: "From a browser, anywhere (https)"
+      excludes: [ n-schijf, laptop, tulaptop, h-schijf, m-schijf, u-schijf, block ]
     - value: "Windows network drive (CIFS)"
+      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block]
     - value: "Linux NFS"
+      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block, h-schijf, m-schijf, u-schijf]
     - value: "Webdav"
-      excludes: [ laptop ]
+      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block ]
   multi: true
 solutions:
-- name: Basic storage
-  id: bs
-  infoline: ITS Basic storage is a cheap solution for storing a lot of data
-  info: |
-    Basic Storage is a storage solution for storing large amounts of data. 
-    It is possible to access the storage via either O:\Research of O:\Archive (depending on the type of data).
-  description: |
-    <dl class="dl-horizontal">
-      <dt>Short description</dt><dd>ITS Basic storage is a cheap solution for storing a lot of data.</dd>
-      <dt>Cost</dt><dd>€2,- TB/month (single) or €4,- TB/month (mirrored)</dd>
-      <dt>Max. storage size</dt><dd>Basic Storage is intented for storing a lot of bulk data, volumes up to 10TB are no problem. For larger volumes contact ITS.</dd>
-      <dt>Sharing and collaboration</dt><dd>Collaboration is possible with collegues and students within the University. Access is controlled by the owner of the fileshare.
-      </dd>
-      <dt>Stored at</dt><dd>Utrecht University or UMC Utrecht</dd>
-      <dt>Availability</dt><dd>Basic Storage has an excellent availability. For maximum availability it is possible to replicate data over two datacenters. Snapshots are possible, backups are not possible</dd>
-      <dt>Security</dt><dd>medium</dd>
-      <dt>Versioning</dt><dd>Available for self-service using "previous versions" in Windows Explorer</dd>
-      <dt>Get started</dt><dd><a href="https://edu.nl/qb8vq" target="_blank">https://edu.nl/qb8vq</a></dd>
-      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
-      </dd>
-    </dl>
-- name: Onedrive for Business
+- name: Microsoft Onedrive
   id: onedrive
   infoline: Location in Office 365 to store and share personal business files
   info: |
@@ -154,11 +159,11 @@ solutions:
       <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
       </dd>
     </dl>
-- name: Your TU laptop
+- name: TUD laptop
   id: tulaptop
-  infoline: Your TU configured and managed laptop
+  infoline: Your TUD configured and managed laptop
   info: |
-    Your TU managed laptop that you use to work on on a daily basis
+    Your TUD managed laptop that you use to work on on a daily basis
   description: |
     <dl class="dl-horizontal">
       <dt>Short description</dt><dd>A device managed by ITS</dd>
@@ -173,7 +178,7 @@ solutions:
       <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
       </dd>
     </dl>
-- name: Your private laptop
+- name: Private laptop
   id: laptop
   infoline: Your private device that is not managed by TU delft
   info: |
@@ -215,23 +220,68 @@ solutions:
       <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
       </dd>
     </dl>
-- name: Project data storage
-  id: project
-  infoline: TU Delft based storage on premise
+- name: Public Cloud
+  id: opencloud
+  infoline: Any free public cloud storage (e.g. Dropbox, Google Drive)
   info: |
-    TU Delft's datacenters hold your storage for you.
+    All free cloud services that offer storage solutions, like Dropbox, Google Drive, OneDrive (personal), Box, Mega, iDrive, iCloud, NextCloud and many others.
   description: |
     <dl class="dl-horizontal">
-      <dt>Short description</dt><dd>Work together and store and share files</dd>
-      <dt>Cost</dt><dd>Free for employees of Utrecht University</dd>
-      <dt>Max. storage size</dt><dd>5GB by default, expandable to 1TB</dd>
-      <dt>Sharing and collaboration</dt><dd>Web based access within and outside UU, sharing and working together is possible with UU colleagues and also guests
+      <dt>Short description</dt><dd>Any free public cloud storage</dd>
+      <dt>Cost</dt><dd>Free</dd>
+      <dt>Max. storage size</dt><dd>Depends on the solution</dd>
+      <dt>Sharing and collaboration</dt><dd>Depends on the solution</dd>
+      <dt>Stored at</dt><dd>Outside of Europe (can be anywhere in the world)</dd>
+      <dt>Availability</dt><dd>Depends on the solution</dd>
+      <dt>Security</dt><dd>low</dd>
+      <dt>Versioning</dt><dd>Depends on the solution</dd>
+      <dt>Get started</dt><dd><a href="" target="_blank"></a></dd>
+      <dt>More information</dt><dd><p>For more information please use a search engine. The IT Servicedesk cannot help you with this topic.</p>
+      <p>&nbsp;</p>
       </dd>
-      <dt>Stored at</dt><dd>Within Europe</dd>
-      <dt>Availability</dt><dd>Microsoft cloudservice. The UU does not make backups of files stores in Office 365</dd>
-      <dt>Security</dt><dd>high</dd>
-      <dt>Versioning</dt><dd>Versioning is available</dd>
-      <dt>Get started</dt><dd><a href="https://solisservices.sharepoint.com/sites/Office365help/SitePages/Teams.aspx" target="_blank">https://solisservices.sharepoint.com/sites/Office365help/SitePages/Teams.aspx</a></dd>
-      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
-      </dd>
-    </dl>
+    </dl> 
+- name: TUD Personal Data Storage (H:)
+  id: h-schijf
+  infoline: "A personal folder (H: home drive) that can be used to save your data centrally"
+  info: |
+    TU Delft provides standard access to a personal folder (H: home drive) that can be used to save your data centrally. 
+    This central storage is referred to as the central file server.  
+    For Linux users, a Linux Home Drive is available.
+
+    <ul>
+      <li>8 GB of disk space is provided as standard for both employees and students.</li>
+      <li>The data in your personal folder will be included in central backups, enabling the recovery of data that has accidentally been deleted.</li>
+      <li>You can recover the backups of lost documents using the previous versions option without the involvement of a Service Point employee. This can be done to recover files up to two weeks back</li>
+- name: TUD Group Data Storage (M:)
+  id: m-schijf
+  infoline: Common storage facilities for employees in the same workgroup, department or research group.
+  info: |
+    Group data storage, also referred to as folders, is a communal storage facility for a number of 
+    users in the same tutorial, department or research group. The standard storage space for a group folder is 50 gigabytes
+- name: TUD Bulk Data Storage (N:)
+  id: n-schijf
+  infoline: Common storage facilities for staff groups.
+  info: |
+    Bulk data storage for staff of TU Delft. 
+    <br/>
+    Do NOT use this for research data!
+- name: TUD Project Data Storage (U:)
+  id: u-schijf
+  infoline: Data storage for research
+  info: |
+    Data storage for research consists of:
+    <ul>
+      <li>Storage space can include several terabytes. (Fair use)</li>
+      <li>A backup is made on a daily basis and is stored for two weeks. This means a data loss of a maximum of one day can occur. </li>
+      <li>Optional: After two weeks, a back-up is made every week and saved for a year. This means a data loss of maximum one day can occur. </li>
+      <li>Optional: Redundant storage in multiple locations / data centres. The data remains available should a storage location fail.
+      <li>With the help of CIFS and NFS (with kerberos authentication) you have access to the data.</li>
+      <li>For a request of more than 5TB, your request is sent to the FIM.</li>
+    </ul>
+- name: TUD Block Storage
+  id: block    
+  infoline: Block storage for virtual machines hosted at TUD (aka VMWare Server Storage)
+  info: |
+    When you require storage that is attached to a TUD hosted virtual machine you will need 
+    block storage for that virtual machine. TUD Block Storage provides high speed access to your 
+    data from your own machine.
