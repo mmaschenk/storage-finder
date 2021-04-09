@@ -50,13 +50,13 @@
                 scontainer = $( "#solutions");
                 info.solutions.forEach(element => {
                     var sid = "solution-" + element.id;
-                    var sdiv = $("<div>", { class: "solution", id: sid });
+                    var sdiv = $("<div>", { class: "solution"});
                     sdiv.append($("<div>", { class: "heading"})
                         .append($("<h4>", { html: element.name}))
                         .append($("<p>", { html: element.infoline})));
 
                     scontainer
-                        .append($("<div>", { class: "tool panel panel-default"})
+                        .append($("<div>", { class: "tool panel panel-default", id: sid})
                             .append($("<a>", { "data-toggle": "modal", "data-target": "#" + sid + "-info"})
                                 .append(sdiv)));
                     scontainer.append($("<div>", { class: "modal  fade", id: sid + "-info", role: "dialog" })
@@ -80,7 +80,7 @@
 
                 $('input').on('change', function (e) {
                     console.log('event',e);
-                    $(".solution").removeClass('greyed-out');
+                    $(".tool").removeClass('greyed-out');
                     $('input.data-answers').each(function( index ) {
                         var ielt = $(this)
                         //console.log( index + ": ", ielt );

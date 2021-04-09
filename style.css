@@ -33,7 +33,7 @@ body {
 }
 
 .greyed-out {
-    background-color: #999;
+    opacity: 0.35;
 }
 
 .modal-dialog {
@@ -50,4 +50,5 @@ body {
     overflow: auto;
     margin: 5px;
     vertical-align: top;
+    transition: opacity 1s;
 }
