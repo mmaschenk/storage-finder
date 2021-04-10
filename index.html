@@ -72,7 +72,8 @@
 
                 qcontainer = $( "#questions");
                 info.input.forEach(element => {                    
-                    var squestion = $("<div>", { class: "storage-question", text: element["question"] });
+                    var squestion = $("<div>", { class: "storage-question" })
+                        .append($("<span>", { class: "storage-question", text: element["question"] }));
                     var qdiv = $("<div>", { class: "storage-questions"}).append(squestion);
                     if (element["info"]) {
                         var tooltip = "#tooltip-" + element["id"]
@@ -120,7 +121,8 @@
                     scontainer.append($("<div>", { class: "modal  fade", id: sid + "-info", role: "dialog" })
                         .append($("<div>", { class: "modal-dialog modal-lg"})
                             .append($("<div>", { class: "modal-content"} )
-                                .append($("<div>", { class: "modal-header", text: element.name }))
+                                .append($("<div>", { class: "modal-header" })
+                                    .append($("<h4>", { text: element.name })))
                                 .append($("<div>", { class: "modal-body", html: element.info  }))
                                 .append($("<div>", { class: "modal-footer", html: element.description })))));
                 });
@@ -178,9 +180,9 @@
 <body>
     <div class="container-fluid top-bar">
         <a class="logo left" href="/en/">
-		    <img src="assets/logo.svg" width="105" height="41" alt="">
-			<span class="text-hide">TU Delft</span>
-	    </a>
+            <img src="assets/logo.svg" width="105" height="41" alt="">
+            <span class="text-hide">TU Delft</span>
+        </a>
     </div>
     <div class="container-fluid">
         <div class="row">
