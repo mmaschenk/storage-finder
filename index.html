@@ -1,23 +1,79 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="shortcut icon" href="/assets/favicon.ico">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Read YAML</title>
+    <title>TU Delft Storage finder</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>    
     <script src="scripts/js-yaml.js"></script>
     <script type="text/javascript">
+
+        function fancysort() {
+            console.log('Clicked sorter');
+
+            var tools = $('div.tool');
+
+            tools.each(function(index) {
+                var element = $(this);
+                console.log('raw',this);
+                console.log(element);
+                var cr = element[0].getBoundingClientRect();
+                element.attr( 'data-old-x', cr.x);
+                element.attr( 'data-old-y', cr.y);
+                console.log(element[0].getBoundingClientRect());
+            });
+
+            tools.sort(function(a,b) {
+                nameA = $(a).attr('data-name');
+                nameB = $(b).attr('data-name');
+
+                //console.log('Comparing',$(a), 'and', $(b));
+
+                if ($(a).hasClass("greyed-out") && !$(b).hasClass("greyed-out"))
+                    return 1;
+
+                if (!$(a).hasClass("greyed-out") && $(b).hasClass("greyed-out"))
+                    return -1;
+                    
+                return nameA.localeCompare(nameB)
+            }).appendTo($('div#solutions')).each(function(index) {
+                var element = $(this);
+                console.log('Appended:', element, 'at', element.attr('data-old-x'),'and', element.attr('data-old-y'));
+                var cr = element[0].getBoundingClientRect();
+                console.log('new position', cr);
+                var deltax = element.attr('data-old-x') - cr.x ;
+                var deltay = element.attr('data-old-y') - cr.y ;
+                console.log('delta', deltax, deltay);
+
+                var transform = `translate(${deltax}px, ${deltay}px)`;
+                console.log("transform", transform);
+                element.css("transition", "transform 0s");
+                element.css("transform", transform);
+
+                requestAnimationFrame( () => {
+                    element.css("transition", "transform 2s");
+                    element.css( { "transform": "" });
+                });
+                
+            });
+            console.log('sorting', tools);
+        }
+
         $(function() {
-            $.get( 'decision-tree-uu.yaml', function( data ) {
+            $.get( 'decision-tree.yaml', function( data ) {
                 var info = jsyaml.load( data );
                 console.log( questions );
 
                 qcontainer = $( "#questions");
                 info.input.forEach(element => {                    
-                    var squestion = $("<div>", { class: "storage-question", text: element["question"] });
+                    var squestion = $("<div>", { class: "storage-question" })
+                        .append($("<span>", { class: "storage-question", text: element["question"] }));
                     var qdiv = $("<div>", { class: "storage-questions"}).append(squestion);
                     if (element["info"]) {
                         var tooltip = "#tooltip-" + element["id"]
@@ -36,7 +92,7 @@
                         selectortype = "radio";
                     }
                     element.answers.forEach(answer => {
-                        console.log(answer);
+                        //console.log(answer);
                         var id = answer["value"];
                         var input = $("<input>", { name: "question-" + element.id, type: selectortype, value: answer["value"], class: 'data-answers' });
                         input.data( { excludes: answer.excludes })
@@ -48,7 +104,9 @@
                 });
 
                 scontainer = $( "#solutions");
-                info.solutions.forEach(element => {
+                info.solutions.sort(function(a,b) {
+                    return a.name.localeCompare(b.name)
+                }).forEach(element => {
                     var sid = "solution-" + element.id;
                     var sdiv = $("<div>", { class: "solution"});
                     sdiv.append($("<div>", { class: "heading"})
@@ -56,13 +114,15 @@
                         .append($("<p>", { html: element.infoline})));
 
                     scontainer
-                        .append($("<div>", { class: "tool panel panel-default", id: sid})
+                        .append($("<div>", { class: "tool panel panel-default", id: sid,
+                                            "data-name": element.name})
                             .append($("<a>", { "data-toggle": "modal", "data-target": "#" + sid + "-info"})
                                 .append(sdiv)));
                     scontainer.append($("<div>", { class: "modal  fade", id: sid + "-info", role: "dialog" })
                         .append($("<div>", { class: "modal-dialog modal-lg"})
                             .append($("<div>", { class: "modal-content"} )
-                                .append($("<div>", { class: "modal-header", text: element.name }))
+                                .append($("<div>", { class: "modal-header" })
+                                    .append($("<h4>", { text: element.name })))
                                 .append($("<div>", { class: "modal-body", html: element.info  }))
                                 .append($("<div>", { class: "modal-footer", html: element.description })))));
                 });
@@ -90,13 +150,26 @@
                         var excludes = ielt.data('excludes');
                         if (excludes && ielt.prop('checked')) {
                             excludes.forEach( exclude => {
-                                console.log('excluding', 'solution-' + exclude);
+                                //console.log('excluding', 'solution-' + exclude);
                                 $("#solution-" + exclude).addClass('greyed-out');
                             });
                         }
                     });
+                    fancysort();
                 });
             });
+
+            const toolnode = document.getElementById('solutions');
+            const config = { attributes: true, childList: true, subtree: true };
+            console.log('going to watch', toolnode);
+
+            const callback = function(mutationsList, observer) {
+                console.log('observed', mutationsList.length, mutationsList);
+            };
+
+            const observer = new MutationObserver(callback);
+
+            observer.observe(toolnode, config);
 
             
         });
@@ -105,7 +178,16 @@
     
 </head>
 <body>
+    <div class="container-fluid top-bar">
+        <a class="logo left" href="/en/">
+            <img src="assets/logo.svg" width="105" height="41" alt="">
+            <span class="text-hide">TU Delft</span>
+        </a>
+    </div>
     <div class="container-fluid">
+        <div class="row">
+            <div class="title-bar">Storage tool</div>
+        </div>
         <div class="row">
             <div class="col-4">
                 <div id=questions>
