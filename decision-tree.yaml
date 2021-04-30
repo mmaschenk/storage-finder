@@ -235,7 +235,6 @@ solutions:
   infoline: Any free public cloud storage (e.g. Dropbox, Google Drive)
   info: |
     All free cloud services that offer storage solutions, like Dropbox, Google Drive, OneDrive (personal), Box, Mega, iDrive, iCloud, NextCloud and many others.
-# should be clarified
   description: |
     <dl class="dl-horizontal">
       <dt>Short description</dt><dd>Any free public cloud storage</dd>
