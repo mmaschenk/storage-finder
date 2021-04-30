@@ -57,7 +57,7 @@ input:
 #    - value: "Critical"
 #      excludes: [ opencloud, surfdrive, laptop, onedrive, tulaptop, msteams, h-schijf, m-schijf, u-schijf, block, n-schijf ]
 - question: "What is the classification of your data regarding CONFIDENTIALITY?"
-  id: 5
+  id: 4
   info: |
     <p>What is the impact if an unauthorised person gains access to the data and what if the data is leaked?</p>
     <p>You can check how to handle personal data before, during and after your research in the <a href="https://www.uu.nl/en/research/research-data-management/guides/handling-personal-data">Guide Handling Personal Data.</a></p>
@@ -100,7 +100,7 @@ input:
 #    - value: "Critical"
 #      excludes: [ n-schijf, laptop, tulaptop, opencloud, surfdrive, h-schijf, m-schijf, u-schijf ]
 - question: "Do you want to be able to access previous versions of the data yourself?"
-  id: 7
+  id: 5
   info: "<p>Some storage solutions allow you to access previous versions of the data yourself. In some cases you need the administrator to ask for previous versions.</p>"
   answers:
     - value: "Yes"
