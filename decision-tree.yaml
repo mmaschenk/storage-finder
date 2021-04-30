@@ -34,7 +34,7 @@ input:
     <li><strong>Sensitive</strong>: Incorrect data would invalidate multiple research projects, could case reputational damage to researcher and University, lead to significant contractual violations</li>
     <li><strong>Critical</strong>: Incorrect data could have far reaching contractual obligations, exclusion from future grants or life-threatening research</li>
     </ul>
-    <p>Utrecht University states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. Data classification is part of the process of registering processing activities (both with and without personal information), for more on that see the <a href=""https://intranet.uu.nl/en/information-security-data-classification"">UU intranet</a>.</p>
+    <p>TUDelft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. Data classification is part of the process of registering processing activities (both with and without personal information), for more on that see the <a href=""https://intranet.uu.nl/en/information-security-data-classification"">UU intranet</a>.</p>
     <p>&nbsp;</p>"
   answers:
     - value: "Low"
