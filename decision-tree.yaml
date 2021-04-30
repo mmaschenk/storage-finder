@@ -1,4 +1,4 @@
-input:
+- input:
 - question: "Do you need an advice on storing personal or research data?"
   id: 1
   info: "Sharing your data means giving specific people access to your data. Depending on the data storage solution you can give access yourself or you have to ask an administrator or data manager to give access to specific people. You find more information about access rights (read, write) in the details per solution."
