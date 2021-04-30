@@ -8,7 +8,7 @@ input:
     - value: "Research"
       excludes: [ laptop, tulaptop, block, h-schijf, n-schijf]    
     - value: "Both"
-      excludes: [ laptop, tulaptop, block, project, msteams, h-schijf, n-schijf, m-schijf, u-schijf ]
+      excludes: [ laptop, tulaptop, block, project, onedrive, h-schijf, n-schijf, m-schijf, u-schijf ]
 
 - question: "Do you want to share your data with colleagues during your research?"
   id: 2
@@ -19,7 +19,7 @@ input:
     - value: "Yes, but only within the university"
       excludes: [ laptop, tulaptop, block, h-schijf, n-schijf]    
     - value: "Yes, with persons outside the university"
-      excludes: [ laptop, tulaptop, block, project, msteams, h-schijf, n-schijf, m-schijf, u-schijf ]
+      excludes: [ laptop, tulaptop, block, project, onedrive, h-schijf, n-schijf, m-schijf, u-schijf ]
 - question: "What will be the total amount of your data?"
   id: 3
   info: "To give you an idea about size: 1 TB is around 330.000 photos (assuming that the average size photo is 3 MB) or more than 35 hours of 1080p video files. Compare: 10TB is the amount of data produced by the Hubble Space Telescope per year (figures 2018)"
@@ -33,7 +33,7 @@ input:
 #    - value: "5 TB - 25 TB"
 #      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
     - value: "More than 5 TB"
-      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, msteams, h-schijf ]
+      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
 #- question: "What is the classification of your data regarding INTEGRITY?"
 #  id: 4
 #  info: |
@@ -53,9 +53,9 @@ input:
 #    - value: "Basic"
 #      excludes: [ opencloud, n-schijf ]
 #    - value: "Sensitive"
-#      excludes: [ opencloud, surfdrive, laptop, n-schijf, h-schijf, m-schijf, u-schijf, msteams, onedrive ]
+#      excludes: [ opencloud, surfdrive, laptop, n-schijf, h-schijf, m-schijf, u-schijf, onedrive, onedrive ]
 #    - value: "Critical"
-#      excludes: [ opencloud, surfdrive, laptop, onedrive, tulaptop, msteams, h-schijf, m-schijf, u-schijf, block, n-schijf ]
+#      excludes: [ opencloud, surfdrive, laptop, onedrive, tulaptop, onedrive, h-schijf, m-schijf, u-schijf, block, n-schijf ]
 - question: "What is the classification of your data regarding CONFIDENTIALITY?"
   id: 5
   info: |
@@ -77,7 +77,7 @@ input:
     - value: "Sensitive"
       excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop  ]
     - value: "Critical"
-      excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop, block, tulaptop, onedrive, msteams ]
+      excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop, block, tulaptop, onedrive ]
 #- question: "How much does your research depend on continuous availability?"
 #  id: 6
 #  info: |
@@ -112,9 +112,9 @@ input:
   info: "<p>The more data and the more it is divided in files and directories, the more performance you need from the storage solution.</p>"
   answers:
     - value: "I am likely to have more than 1,000 files in a single directory, collected within two years."
-      excludes: [ n-schijf, onedrive, msteams, opencloud, surfdrive ]
+      excludes: [ n-schijf, onedrive, opencloud, surfdrive ]
     - value: "My data interactions demand high transaction or transfer rates."
-      excludes: [ n-schijf, onedrive, opencloud, msteams, surfdrive ]
+      excludes: [ n-schijf, onedrive, opencloud, surfdrive ]
   multi: true
 - question: "How do you want to access your data?"
   id: 9
@@ -122,11 +122,11 @@ input:
     - value: "From a browser, anywhere (https)"
       excludes: [ n-schijf, laptop, tulaptop, h-schijf, m-schijf, u-schijf, block ]
     - value: "Windows network drive (CIFS)"
-      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block]
+      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, opencloud, block]
     - value: "Linux NFS"
-      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block, h-schijf, m-schijf, u-schijf]
+      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, opencloud, block, h-schijf, m-schijf, u-schijf]
     - value: "Webdav"
-      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block ]
+      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, opencloud, block ]
   multi: true
 solutions:
 - name: Microsoft Onedrive
@@ -235,6 +235,7 @@ solutions:
   infoline: Any free public cloud storage (e.g. Dropbox, Google Drive)
   info: |
     All free cloud services that offer storage solutions, like Dropbox, Google Drive, OneDrive (personal), Box, Mega, iDrive, iCloud, NextCloud and many others.
+# should be clarified
   description: |
     <dl class="dl-horizontal">
       <dt>Short description</dt><dd>Any free public cloud storage</dd>
