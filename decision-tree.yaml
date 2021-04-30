@@ -127,7 +127,7 @@ input:
 #      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block, h-schijf, m-schijf, u-schijf]
 #    - value: "Webdav"
 #      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block ]
-  multi: true
+#  multi: true
 solutions:
 - name: Microsoft Onedrive
   id: onedrive
