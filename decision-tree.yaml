@@ -78,27 +78,27 @@ input:
       excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop  ]
     - value: "Critical"
       excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop, block, tulaptop, onedrive, msteams ]
-- question: "How much does your research depend on continuous availability?"
-  id: 6
-  info: |
-    <p>Availability of data refers to both not losing the data wherever it is stored and being able to use that data, because the services used to process the data are working as described.</p>
-    <p>What is the impact if the data would be unrecoverable or the data wouldn’t be accessible for a while (days/weeks)? The classification of the impact falls in 4 categories:</p>
-    <ul>
-      <li><strong>Low</strong>: Not being able to access the data or losing them would be inconvenient, lead to rework</li>
-      <li><strong>Basic</strong>: Losing the data would invalidate research and/or require significant rework. Not having access to the data would cause significant delays and could incur costs up to 250.000 EUR</li>
-      <li><strong>Sensitive</strong>: Losing data or not having access to it would terminate or hugely delay multiple research projects, could cause significant reputational damage to researcher and University, lead to significant contractual violations or individuals not being able to access their sensitive personal data</li>
-      <li><strong>Critical</strong>: Incorrect data could have far reaching contractual obligations, cause damages in excess of 1.500.000 EUR, including exclusion from future grants or losing/not being able to access potentially life-threatening data</li>
-    </ul>
-    <p>Utrecht University states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://intranet.uu.nl/en/information-security-data-classification">UU intranet</a>.</p>
-  answers:
-    - value: "Low"
-      excludes: [ n-schijf ]
-    - value: "Basic"
-      excludes: [ n-schijf, laptop, tulaptop, opencloud ]
-    - value: "Sensitive"
-      excludes: [ n-schijf, laptop, tulaptop, opencloud ]
-    - value: "Critical"
-      excludes: [ n-schijf, laptop, tulaptop, opencloud, surfdrive, h-schijf, m-schijf, u-schijf ]
+#- question: "How much does your research depend on continuous availability?"
+#  id: 6
+#  info: |
+#    <p>Availability of data refers to both not losing the data wherever it is stored and being able to use that data, because the services used to process the data are working as described.</p>
+#    <p>What is the impact if the data would be unrecoverable or the data wouldn’t be accessible for a while (days/weeks)? The classification of the impact falls in 4 categories:</p>
+#    <ul>
+#      <li><strong>Low</strong>: Not being able to access the data or losing them would be inconvenient, lead to rework</li>
+#      <li><strong>Basic</strong>: Losing the data would invalidate research and/or require significant rework. Not having access to the data would cause significant delays and could incur costs up to 250.000 EUR</li>
+#      <li><strong>Sensitive</strong>: Losing data or not having access to it would terminate or hugely delay multiple research projects, could cause significant reputational damage to researcher and University, lead to significant contractual violations or individuals not being able to access their sensitive personal data</li>
+#      <li><strong>Critical</strong>: Incorrect data could have far reaching contractual obligations, cause damages in excess of 1.500.000 EUR, including exclusion from future grants or losing/not being able to access potentially life-threatening data</li>
+#    </ul>
+#    <p>Utrecht University states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://intranet.uu.nl/en/information-security-data-classification">UU intranet</a>.</p>
+#  answers:
+#    - value: "Low"
+#      excludes: [ n-schijf ]
+#    - value: "Basic"
+#      excludes: [ n-schijf, laptop, tulaptop, opencloud ]
+#    - value: "Sensitive"
+#      excludes: [ n-schijf, laptop, tulaptop, opencloud ]
+#    - value: "Critical"
+#      excludes: [ n-schijf, laptop, tulaptop, opencloud, surfdrive, h-schijf, m-schijf, u-schijf ]
 - question: "Do you want to be able to access previous versions of the data yourself?"
   id: 7
   info: "<p>Some storage solutions allow you to access previous versions of the data yourself. In some cases you need the administrator to ask for previous versions.</p>"
