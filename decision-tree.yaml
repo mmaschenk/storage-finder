@@ -28,34 +28,34 @@ input:
       excludes: [ n-schijf ]
     - value: "100 GB - 1 TB"
       excludes: [ laptop, tulaptop, n-schijf, h-schijf ]
-    - value: "1 TB - 25 TB"
+    - value: "1 TB - 5 TB"
       excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
 #    - value: "5 TB - 25 TB"
 #      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
-    - value: "More than that!"
+    - value: "More than 5 TB"
       excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, msteams, h-schijf ]
-- question: "What is the classification of your data regarding INTEGRITY?"
-  id: 4
-  info: |
-    <p>What is the impact on your research if the data turns out to be incorrect?<br>
-    The classification of the impact this may have, falls in 4 categories:</p>
-    <ul>
-    <li><strong>Low</strong>: Incorrect data would be an inconvenience, require some rework</li>
-    <li><strong>Basic</strong>: Incorrect data would invalidate research, require significant rework</li>
-    <li><strong>Sensitive</strong>: Incorrect data would invalidate multiple research projects, could case reputational damage to researcher and University, lead to significant contractual violations</li>
-    <li><strong>Critical</strong>: Incorrect data could have far reaching contractual obligations, exclusion from future grants or life-threatening research</li>
-    </ul>
-    <p>Utrecht University states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. Data classification is part of the process of registering processing activities (both with and without personal information), for more on that see the <a href=""https://intranet.uu.nl/en/information-security-data-classification"">UU intranet</a>.</p>
-    <p>&nbsp;</p>"
-  answers:
-    - value: "Low"
-      excludes: [ n-schijf ]
-    - value: "Basic"
-      excludes: [ opencloud, n-schijf ]
-    - value: "Sensitive"
-      excludes: [ opencloud, surfdrive, laptop, n-schijf, h-schijf, m-schijf, u-schijf, msteams, onedrive ]
-    - value: "Critical"
-      excludes: [ opencloud, surfdrive, laptop, onedrive, tulaptop, msteams, h-schijf, m-schijf, u-schijf, block, n-schijf ]
+#- question: "What is the classification of your data regarding INTEGRITY?"
+#  id: 4
+#  info: |
+#    <p>What is the impact on your research if the data turns out to be incorrect?<br>
+#    The classification of the impact this may have, falls in 4 categories:</p>
+#    <ul>
+#    <li><strong>Low</strong>: Incorrect data would be an inconvenience, require some rework</li>
+#    <li><strong>Basic</strong>: Incorrect data would invalidate research, require significant rework</li>
+#    <li><strong>Sensitive</strong>: Incorrect data would invalidate multiple research projects, could case reputational damage to researcher and University, lead to significant contractual violations</li>
+#    <li><strong>Critical</strong>: Incorrect data could have far reaching contractual obligations, exclusion from future grants or life-threatening research</li>
+#    </ul>
+#    <p>Utrecht University states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. Data classification is part of the process of registering processing activities (both with and without personal information), for more on that see the <a href=""https://intranet.uu.nl/en/information-security-data-classification"">UU intranet</a>.</p>
+#    <p>&nbsp;</p>"
+#  answers:
+#    - value: "Low"
+#      excludes: [ n-schijf ]
+#    - value: "Basic"
+#      excludes: [ opencloud, n-schijf ]
+#    - value: "Sensitive"
+#      excludes: [ opencloud, surfdrive, laptop, n-schijf, h-schijf, m-schijf, u-schijf, msteams, onedrive ]
+#    - value: "Critical"
+#      excludes: [ opencloud, surfdrive, laptop, onedrive, tulaptop, msteams, h-schijf, m-schijf, u-schijf, block, n-schijf ]
 - question: "What is the classification of your data regarding CONFIDENTIALITY?"
   id: 5
   info: |
