@@ -17,11 +17,11 @@ input:
       excludes: [ n-schijf ]
     - value: "100 GB - 1 TB"
       excludes: [ laptop, tulaptop, n-schijf, h-schijf ]
-    - value: "1 TB - 25 TB"
+    - value: "1 TB - 5 TB"
       excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
 #    - value: "5 TB - 25 TB"
 #      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
-    - value: "More than that!"
+    - value: "More than 5 TB"
       excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, msteams, h-schijf ]
 - question: "What is the classification of your data regarding INTEGRITY?"
   id: 3
