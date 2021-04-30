@@ -1,14 +1,12 @@
 input:
 - question: "Do you need an advice on storing personal or research data?"
   id: 1
-#  info: "Sharing your data means giving specific people access to your data. Depending on the data storage solution you can give access yourself or you have to ask an administrator or data manager to give access to specific people. You find more information about access rights (read, write) in the details per solution."
+  info: "Sharing your data means giving specific people access to your data. Depending on the data storage solution you can give access yourself or you have to ask an administrator or data manager to give access to specific people. You find more information about access rights (read, write) in the details per solution."
   answers:
     - value: "Personal"
       excludes: [ n-schijf, m-schijf, block ]
     - value: "Research data"
       excludes: [ laptop, tulaptop, block, h-schijf, n-schijf ]    
-
-input:
 - question: "Do you want to share your data with colleagues during your research?"
   id: 2
   info: "Sharing your data means giving specific people access to your data. Depending on the data storage solution you can give access yourself or you have to ask an administrator or data manager to give access to specific people. You find more information about access rights (read, write) in the details per solution."
