@@ -236,7 +236,7 @@ solutions:
     When you require storage that is attached to a TUD hosted virtual machine you will need 
     block storage for that virtual machine. TUD Block Storage provides high speed access to your 
     data from your own machine.
-- name:  Contact ICT
+- name: Contact ICT
   id: contact    
   infoline: For special storage solutions please contact ICT department
   info: |
