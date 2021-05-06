@@ -45,7 +45,7 @@ input:
 #    <li><strong>Sensitive</strong>: Incorrect data would invalidate multiple research projects, could case reputational damage to researcher and University, lead to significant contractual violations</li>
 #    <li><strong>Critical</strong>: Incorrect data could have far reaching contractual obligations, exclusion from future grants or life-threatening research</li>
 #    </ul>
-#    <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. Data classification is part of the process of registering processing activities (both with and without personal information), for more on that see the <a href=""https://intranet.uu.nl/en/information-security-data-classification"">UU intranet</a>.</p>
+#    <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. Data classification is part of the process of registering processing activities (both with and without personal information), for more on that see the <a href=""https://tudelft.intranet.nl"">TU Delft intranet</a>.</p>
 #    <p>&nbsp;</p>"
 #  answers:
 #    - value: "Low"
@@ -60,7 +60,7 @@ input:
   id: 5
   info: |
     <p>What is the impact if an unauthorised person gains access to the data and what if the data is leaked?</p>
-    <p>You can check how to handle personal data before, during and after your research in the <a href="https://www.uu.nl/en/research/research-data-management/guides/handling-personal-data">Guide Handling Personal Data.</a></p>
+    <p>You can check how to handle personal data before, during and after your research in the <a href="https://www.tudelft.nl">Guide Handling Personal Data.</a></p>
     <p>The classification of the impact falls in 4 categories:</p>
     <ul>
       <li><strong>Low</strong>: Short term interruption, mainly data that’s already public or isn’t sensitive</li>
@@ -68,7 +68,7 @@ input:
       <li><strong>Sensitive</strong>: Publication restrictions, reputation damage to researcher and University, patents or contractual agreements, sensitive personal data of moderate amount of individuals or non-sensitive personal data of large number of individuals</li>
       <li><strong>Critical</strong>: Far reaching contractual obligations, exclusion from future grants or life-threatening research, highly sensitive personal data of individuals or personal data of huge number of individuals.</li>
     </ul>
-    <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://intranet.uu.nl/en/information-security-data-classification">UU intranet</a>.</p>
+    <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://tudelft.intranet.nl">TU Delft intranet</a>.</p>
   answers:
     - value: "Low"
       excludes: [ n-schijf ]
@@ -89,7 +89,7 @@ input:
 #      <li><strong>Sensitive</strong>: Losing data or not having access to it would terminate or hugely delay multiple research projects, could cause significant reputational damage to researcher and University, lead to significant contractual violations or individuals not being able to access their sensitive personal data</li>
 #      <li><strong>Critical</strong>: Incorrect data could have far reaching contractual obligations, cause damages in excess of 1.500.000 EUR, including exclusion from future grants or losing/not being able to access potentially life-threatening data</li>
 #    </ul>
-#    <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://intranet.uu.nl/en/information-security-data-classification">UU intranet</a>.</p>
+#    <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://tudelft.intranet.nl">TU Delft intranet</a>.</p>
 #  answers:
 #    - value: "Low"
 #      excludes: [ n-schijf ]
@@ -116,20 +116,20 @@ input:
     - value: "My data interactions demand high transaction or transfer rates."
       excludes: [ n-schijf, onedrive, opencloud, msteams, surfdrive ]
   multi: true
-- question: "How do you want to access your data?"
-  id: 8
-  answers:
-    - value: "From a browser, anywhere (https)"
-      excludes: [ n-schijf, laptop, tulaptop, h-schijf, m-schijf, u-schijf, block ]
-    - value: "Windows network drive (CIFS)"
-      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block]
-    - value: "Linux NFS"
-      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block, h-schijf, m-schijf, u-schijf]
-    - value: "Webdav"
-      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block ]
-  multi: true
+#- question: "How do you want to access your data?"
+#  id: 8
+#  answers:
+#    - value: "From a browser, anywhere (https)"
+#      excludes: [ n-schijf, laptop, tulaptop, h-schijf, m-schijf, u-schijf, block ]
+#    - value: "Windows network drive (CIFS)"
+#      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block]
+#    - value: "Linux NFS"
+#      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block, h-schijf, m-schijf, u-schijf]
+#    - value: "Webdav"
+#      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block ]
+#  multi: true
 solutions:
-- name: Microsoft Onedrive
+- name: Microsoft Onedrive for Business
   id: onedrive
   infoline: Location in Office 365 to store and share personal business files
   info: |
@@ -140,13 +140,13 @@ solutions:
       <dt>Short description</dt><dd>Location in Office 365 to store and share personal business files</dd>
       <dt>Cost</dt><dd>Free for employees of TU Delft</dd>
       <dt>Max. storage size</dt><dd>1TB</dd>
-      <dt>Sharing and collaboration</dt><dd>Web based access within and outside UU, sharing and working together is possible with UU colleagues and also guests</dd>
+      <dt>Sharing and collaboration</dt><dd>Web based access within and outside TU Delft, sharing and working together is possible with TU Delft colleagues and also guests</dd>
       <dt>Stored at</dt><dd>Within Europe</dd>
-      <dt>Availability</dt><dd>Microsoft cloudservice. The UU does not make backups of files stores in Office 365</dd>
+      <dt>Availability</dt><dd>Microsoft cloudservice. The TU Delft does not make backups of files stores in Office 365</dd>
       <dt>Security</dt><dd>high</dd>
       <dt>Versioning</dt><dd>Versioning is available</dd>
       <dt>Get started</dt><dd><a href="https://solisservices-my.sharepoint.com/" target="_blank">https://solisservices-my.sharepoint.com/</a></dd>
-      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
+      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.tudelft.nl">IT servicedesk</a></p>
       </dd>
     </dl>
 - name: Surfdrive
@@ -163,11 +163,11 @@ solutions:
       <dt>Max. storage size</dt><dd>500GB</dd>
       <dt>Sharing and collaboration</dt><dd>SURFdrive offers staff, researchers and students an easy way to share and synchronise files within a secure community cloud with ample storage capacity.</dd>
       <dt>Stored at</dt><dd>Within Europe</dd>
-      <dt>Availability</dt><dd>SURF cloudservice. The UU does not make backups of files stores in SURFdrive</dd>
+      <dt>Availability</dt><dd>SURF cloudservice. The TU Delft does not make backups of files stores in SURFdrive</dd>
       <dt>Security</dt><dd>medium</dd>
       <dt>Versioning</dt><dd>Versioning is available</dd>
       <dt>Get started</dt><dd><a href="https://surfdrive.nl/" target="_blank">https://surfdrive.nl/</a></dd>
-      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
+      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.tudelft.nl">IT servicedesk</a></p>
       </dd>
     </dl>
 - name: TUD laptop
@@ -186,7 +186,7 @@ solutions:
       <dt>Security</dt><dd>low</dd>
       <dt>Versioning</dt><dd>Not possible</dd>
         <dt>Get started</dt><dd><a href="https://solisservices.sharepoint.com/:b:/r/sites/10536/Dienstbeschrijvingen/SolisWerkPlek%203.0.pdf?csf=1&amp;web=1&amp;e=BVhOck" target="_blank">https://solisservices.sharepoint.com/:b:/r/sites/10536/Dienstbeschrijvingen/SolisWerkPlek%203.0.pdf?csf=1&amp;web=1&amp;e=BVhOck</a></dd>
-      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
+      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.tudelft.nl">IT servicedesk</a></p>
       </dd>
     </dl>
 - name: Private laptop
@@ -205,7 +205,7 @@ solutions:
       <dt>Security</dt><dd>low</dd>
       <dt>Versioning</dt><dd>Not applicable</dd>
       <dt>Get started</dt><dd><a href="" target="_blank"></a></dd>
-      <dt>More information</dt><dd><p>For more information please contact your <a href="https://intranet.uu.nl/it-contactpersonen-informatie-en-demandmanagers">IT demand manager.</a></p>
+      <dt>More information</dt><dd><p>For more information please contact your <a href="https://tudelft.intranet.nl">IT demand manager.</a></p>
       </dd>
     </dl>      
 - name: Microsoft Teams
@@ -220,14 +220,14 @@ solutions:
       <dt>Short description</dt><dd>Work together and store and share files</dd>
       <dt>Cost</dt><dd>Free for employees of the TU Delft</dd>
       <dt>Max. storage size</dt><dd>5GB by default, expandable to 1TB</dd>
-      <dt>Sharing and collaboration</dt><dd>Web based access within and outside UU, sharing and working together is possible with UU colleagues and also guests
+      <dt>Sharing and collaboration</dt><dd>Web based access within and outside TU Delft, sharing and working together is possible with TU Delft colleagues and also guests
       </dd>
       <dt>Stored at</dt><dd>Within Europe</dd>
-      <dt>Availability</dt><dd>Microsoft cloudservice. The UU does not make backups of files stores in Office 365</dd>
+      <dt>Availability</dt><dd>Microsoft cloudservice. The TU Delft does not make backups of files stores in Office 365</dd>
       <dt>Security</dt><dd>high</dd>
       <dt>Versioning</dt><dd>Versioning is available</dd>
       <dt>Get started</dt><dd><a href="https://solisservices.sharepoint.com/sites/Office365help/SitePages/Teams.aspx" target="_blank">https://solisservices.sharepoint.com/sites/Office365help/SitePages/Teams.aspx</a></dd>
-      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
+      <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.tudelft.nl">IT servicedesk</a></p>
       </dd>
     </dl>
 - name: Public Cloud
@@ -294,3 +294,8 @@ solutions:
     When you require storage that is attached to a TUD hosted virtual machine you will need 
     block storage for that virtual machine. TUD Block Storage provides high speed access to your 
     data from your own machine.
+- name: Contact ICT
+  id: contact    
+  infoline: For special storage solutions please contact ICT department
+  info: |
+    No info provided
