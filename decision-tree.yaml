@@ -1,4 +1,5 @@
 input:
+
 - question: "Do you need advise about the storage for your personal or research data?"
   id: 1
   info: "Sharing your data means giving specific people access to your data. Depending on the data storage solution you can give access yourself or you have to ask an administrator or data manager to give access to specific people. You find more information about access rights (read, write) in the details per solution."
@@ -7,8 +8,6 @@ input:
       excludes: [ n-schijf ]
     - value: "Research"
       excludes: [ laptop, tulaptop, block, h-schijf, n-schijf]    
-    - value: "Both"
-      excludes: [ laptop, tulaptop, block, project, msteams, h-schijf, n-schijf, m-schijf, u-schijf ]
 
 - question: "Do you want to share your data with colleagues during your research?"
   id: 2
@@ -20,42 +19,20 @@ input:
       excludes: [ laptop, tulaptop, block, h-schijf, n-schijf]    
     - value: "Yes, with persons outside the university"
       excludes: [ laptop, tulaptop, block, project, msteams, h-schijf, n-schijf, m-schijf, u-schijf ]
+      
 - question: "What will be the total amount of your data?"
   id: 3
   info: "To give you an idea about size: 1 TB is around 330.000 photos (assuming that the average size photo is 3 MB) or more than 35 hours of 1080p video files. Compare: 10TB is the amount of data produced by the Hubble Space Telescope per year (figures 2018)"
   answers:
-    - value: "Under 100 GB"
+    - value: "Under 50 GB"
       excludes: [ n-schijf ]
-    - value: "100 GB - 1 TB"
-      excludes: [ laptop, tulaptop, n-schijf, h-schijf ]
+    - value: "50 GB - 1 TB"
+      excludes: [ laptop, tulaptop, n-schijf, h-schijf, m-schijf ]
     - value: "1 TB - 5 TB"
-      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
-#    - value: "5 TB - 25 TB"
-#      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf ]
+      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, h-schijf, m-schijf ]
     - value: "More than 5 TB"
-      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, msteams, h-schijf ]
-#- question: "What is the classification of your data regarding INTEGRITY?"
-#  id: 4
-#  info: |
-#    <p>What is the impact on your research if the data turns out to be incorrect?<br>
-#    The classification of the impact this may have, falls in 4 categories:</p>
-#    <ul>
-#    <li><strong>Low</strong>: Incorrect data would be an inconvenience, require some rework</li>
-#    <li><strong>Basic</strong>: Incorrect data would invalidate research, require significant rework</li>
-#    <li><strong>Sensitive</strong>: Incorrect data would invalidate multiple research projects, could case reputational damage to researcher and University, lead to significant contractual violations</li>
-#    <li><strong>Critical</strong>: Incorrect data could have far reaching contractual obligations, exclusion from future grants or life-threatening research</li>
-#    </ul>
-#    <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. Data classification is part of the process of registering processing activities (both with and without personal information), for more on that see the <a href=""https://tudelft.intranet.nl"">TU Delft intranet</a>.</p>
-#    <p>&nbsp;</p>"
-#  answers:
-#    - value: "Low"
-#      excludes: [ n-schijf ]
-#    - value: "Basic"
-#      excludes: [ opencloud, n-schijf ]
-#    - value: "Sensitive"
-#      excludes: [ opencloud, surfdrive, laptop, n-schijf, h-schijf, m-schijf, u-schijf, msteams, onedrive ]
-#    - value: "Critical"
-#      excludes: [ opencloud, surfdrive, laptop, onedrive, tulaptop, msteams, h-schijf, m-schijf, u-schijf, block, n-schijf ]
+      excludes: [ laptop, tulaptop, surfdrive, n-schijf, block, onedrive, msteams, h-schijf, opencloud, m-schijf ]
+
 - question: "What is the classification of your data regarding CONFIDENTIALITY?"
   id: 5
   info: |
@@ -63,42 +40,22 @@ input:
     <p>You can check how to handle personal data before, during and after your research in the <a href="https://www.tudelft.nl">Guide Handling Personal Data.</a></p>
     <p>The classification of the impact falls in 4 categories:</p>
     <ul>
-      <li><strong>Low</strong>: Short term interruption, mainly data that’s already public or isn’t sensitive</li>
-      <li><strong>Basic</strong>: Non-public research data, long term interruption or invalidation of research, personal data of moderate amount of individuals or sensitive personal data of small number of individuals</li>
+#      <li><strong>Low</strong>: Short term interruption, mainly data that’s already public or isn’t sensitive</li>
+      <li><strong>Normal</strong>: Non-public research data, long term interruption or invalidation of research, personal data of moderate amount of individuals or sensitive personal data of small number of individuals</li>
       <li><strong>Sensitive</strong>: Publication restrictions, reputation damage to researcher and University, patents or contractual agreements, sensitive personal data of moderate amount of individuals or non-sensitive personal data of large number of individuals</li>
       <li><strong>Critical</strong>: Far reaching contractual obligations, exclusion from future grants or life-threatening research, highly sensitive personal data of individuals or personal data of huge number of individuals.</li>
     </ul>
     <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://tudelft.intranet.nl">TU Delft intranet</a>.</p>
   answers:
-    - value: "Low"
+#    - value: "Low"
+#      excludes: [ n-schijf ]
+    - value: "Normal"
       excludes: [ n-schijf ]
-    - value: "Basic"
-      excludes: [ n-schijf, opencloud ]
     - value: "Sensitive"
       excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop  ]
     - value: "Critical"
       excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop, block, tulaptop, onedrive, msteams ]
-#- question: "How much does your research depend on continuous availability?"
-#  id: 6
-#  info: |
-#    <p>Availability of data refers to both not losing the data wherever it is stored and being able to use that data, because the services used to process the data are working as described.</p>
-#    <p>What is the impact if the data would be unrecoverable or the data wouldn’t be accessible for a while (days/weeks)? The classification of the impact falls in 4 categories:</p>
-#    <ul>
-#      <li><strong>Low</strong>: Not being able to access the data or losing them would be inconvenient, lead to rework</li>
-#      <li><strong>Basic</strong>: Losing the data would invalidate research and/or require significant rework. Not having access to the data would cause significant delays and could incur costs up to 250.000 EUR</li>
-#      <li><strong>Sensitive</strong>: Losing data or not having access to it would terminate or hugely delay multiple research projects, could cause significant reputational damage to researcher and University, lead to significant contractual violations or individuals not being able to access their sensitive personal data</li>
-#      <li><strong>Critical</strong>: Incorrect data could have far reaching contractual obligations, cause damages in excess of 1.500.000 EUR, including exclusion from future grants or losing/not being able to access potentially life-threatening data</li>
-#    </ul>
-#    <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://tudelft.intranet.nl">TU Delft intranet</a>.</p>
-#  answers:
-#    - value: "Low"
-#      excludes: [ n-schijf ]
-#    - value: "Basic"
-#      excludes: [ n-schijf, laptop, tulaptop, opencloud ]
-#    - value: "Sensitive"
-#      excludes: [ n-schijf, laptop, tulaptop, opencloud ]
-#    - value: "Critical"
-#      excludes: [ n-schijf, laptop, tulaptop, opencloud, surfdrive, h-schijf, m-schijf, u-schijf ]
+
 - question: "Do you want to be able to access previous versions of the data yourself?"
   id: 7
   info: "<p>Some storage solutions allow you to access previous versions of the data yourself. In some cases you need the administrator to ask for previous versions.</p>"
@@ -116,18 +73,7 @@ input:
     - value: "My data interactions demand high transaction or transfer rates."
       excludes: [ n-schijf, onedrive, opencloud, msteams, surfdrive ]
   multi: true
-#- question: "How do you want to access your data?"
-#  id: 8
-#  answers:
-#    - value: "From a browser, anywhere (https)"
-#      excludes: [ n-schijf, laptop, tulaptop, h-schijf, m-schijf, u-schijf, block ]
-#    - value: "Windows network drive (CIFS)"
-#      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block]
-#    - value: "Linux NFS"
-#      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block, h-schijf, m-schijf, u-schijf]
-#    - value: "Webdav"
-#      excludes: [ n-schijf, onedrive, surfdrive, tulaptop, laptop, msteams, opencloud, block ]
-#  multi: true
+
 solutions:
 - name: Microsoft Onedrive for Business
   id: onedrive
