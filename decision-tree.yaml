@@ -44,8 +44,8 @@ input:
     </ul>
     <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://tudelft.intranet.nl">TU Delft intranet</a>.</p>
   answers:
-    - value: "Low"
-      excludes: [ n-schijf ]
+#    - value: "Low"
+#      excludes: [ n-schijf ]
     - value: "Normal"
       excludes: [ n-schijf ]
     - value: "Sensitive"
@@ -237,7 +237,7 @@ solutions:
     block storage for that virtual machine. TUD Block Storage provides high speed access to your 
     data from your own machine.
 - name: Contact ICT
-  id: contact    
+  id: w-contact    
   infoline: For special storage solutions please contact ICT department
   info: |
     Bulk data storage for staff of TU Delft. 
