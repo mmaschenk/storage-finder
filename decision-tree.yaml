@@ -37,15 +37,15 @@ input:
     <p>You can check how to handle personal data before, during and after your research in the <a href="https://www.tudelft.nl">Guide Handling Personal Data.</a></p>
     <p>The classification of the impact falls in 4 categories:</p>
     <ul>
-#      <li><strong>Low</strong>: Short term interruption, mainly data that’s already public or isn’t sensitive</li>
+      <li><strong>Low</strong>: Short term interruption, mainly data that’s already public or isn’t sensitive</li>
       <li><strong>Normal</strong>: Non-public research data, long term interruption or invalidation of research, personal data of moderate amount of individuals or sensitive personal data of small number of individuals</li>
       <li><strong>Sensitive</strong>: Publication restrictions, reputation damage to researcher and University, patents or contractual agreements, sensitive personal data of moderate amount of individuals or non-sensitive personal data of large number of individuals</li>
       <li><strong>Critical</strong>: Far reaching contractual obligations, exclusion from future grants or life-threatening research, highly sensitive personal data of individuals or personal data of huge number of individuals.</li>
     </ul>
     <p>TU Delft states that you classify your research data to determine the value of your data and the security risk that your data is exposed to. There is a short classification available on the <a href="https://tudelft.intranet.nl">TU Delft intranet</a>.</p>
   answers:
-#    - value: "Low"
-#      excludes: [ n-schijf ]
+    - value: "Low"
+      excludes: [ n-schijf ]
     - value: "Normal"
       excludes: [ n-schijf ]
     - value: "Sensitive"
