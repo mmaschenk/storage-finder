@@ -5,7 +5,7 @@ input:
   info: "Storage for your research data often may require to be secured, backed up, has possibility to share/limit access to the internal and external colleagues. Often you won't have access to the storage provided by the TU Delft once your contract is over. Please check different storage cards for more details. "
   answers:
     - value: "Yes, I need to store my research data"
-      excludes: [ n-schijf, laptop ]
+      excludes: [ n-schijf, laptop, w-contact ]
     - value: "No, I'd like to store my personal data (photos, contracts etc)"
       excludes: [ block, m-schijf, n-schijf, u-schijf, msteams, w-contact ]    
 - question: "Do you want to share your data with colleagues during your research?"
