@@ -49,7 +49,7 @@ input:
     - value: "Normal"
       excludes: [ n-schijf ]
     - value: "Sensitive"
-      excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop  ]
+      excludes: [ n-schijf, opencloud, m-schijf, laptop  ]
     - value: "Critical"
       excludes: [ n-schijf, opencloud, h-schijf, m-schijf, u-schijf, surfdrive, laptop, block, tulaptop, onedrive, msteams ]
 - question: "Do you want to be able to access previous versions of the data yourself?"
