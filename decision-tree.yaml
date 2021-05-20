@@ -7,7 +7,7 @@ input:
     - value: "Yes, I need to store my research data"
       excludes: [ n-schijf, laptop ]
     - value: "No, I'd like to store my personal data (photos, contracts etc)"
-      excludes: [ block, m-schijf, n-schijf, u-schijf ]    
+      excludes: [ block, m-schijf, n-schijf, u-schijf, msteams ]    
 - question: "Do you want to share your data with colleagues during your research?"
   id: 2
   info: "Sharing your data means giving specific people access to your data. Depending on the data storage solution you can give access yourself or you have to ask an administrator or data manager to give access to specific people. You find more information about access rights (read, write) in the details per solution."
