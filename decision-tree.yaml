@@ -93,7 +93,7 @@ solutions:
     </dl>
 - name: Surfdrive
   id: surfdrive
-  infoline: A cloud service for sharing documents
+  infoline: SURFdrive is a personal cloud storage service for Dutch education and research.
   info: |
     SURFdrive is a personal cloud storage service for the Dutch education and research community, offering staff, 
     researchers and students an easy way to store, synchronise and share files in the secure and reliable SURF community 
