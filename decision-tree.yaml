@@ -6,7 +6,7 @@ input:
   answers:
     - value: "Yes, I need to store my research data"
       excludes: [ n-schijf, laptop ]
-    - value: "No, I'd like to store my personal data (photos, contracts etc)"
+    - value: "No, I'd like to store other data (photos, contracts etc)"
       excludes: [ block, m-schijf, n-schijf, u-schijf, msteams, w-contact ]    
 - question: "Do you want to share your data with colleagues during your research?"
   id: 2
