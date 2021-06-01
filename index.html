@@ -175,11 +175,26 @@
         });
     </script>
     <link rel="stylesheet" href="style.css">    
-    
+
+    <script type="text/javascript">
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="//stats.rs.tudelft.nl/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '2']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+
+
 </head>
 <body>
     <div class="container-fluid top-bar">
-        <a class="logo left" href="/en/">
+        <a class="logo left" href="//www.tudelft.nl">
             <img src="assets/logo.svg" width="105" height="41" alt="">
             <span class="text-hide">TU Delft</span>
         </a>
@@ -188,12 +203,19 @@
         <div class="row">
             <div class="title-bar">Storage tool</div>
         </div>
-        <div class="row">
+        <div class="row">        
             <div class="col-4">
                 <div id=questions>
                 </div>
             </div>
             <div class="col-8">
+                <div id="introduction">
+                    <p>This Storage tool is a guide through the range of IT solutions for storing and managing data. 
+                    Depending on your demands, the possible solutions are shown. 
+                    Click on a solution to see more details.</p>
+
+                    <p>For more information please contact the <a href="//dcc.tudelft.nl">Digital Competence Centre</a></p>
+                </div>
                 <div id="solutions"></div>
             </div>
         </div>

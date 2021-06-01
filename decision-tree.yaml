@@ -1,7 +1,7 @@
 input:
 - question: "Do you want to share your data with colleagues during your research?"
   id: 1
-  info: "Sharing your data means giving specific people access to your data. Depending on the data storage solution you can give access yourself or you have to ask an administrator or data manager to give access to specific people. You find more information about access rights (read, write) in the details per solution."
+  info: "Sharing your data means giving specific people access to your data. Depending on the data storage solution you can give access yourself or you have to ask an administrator or data manager to give access to specific people. You can find more information about access rights (read, write) in the details per solution."
   answers:
     - value: "No"
       excludes: [ n-schijf ]
@@ -159,7 +159,7 @@ solutions:
       <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
       </dd>
     </dl>
-- name: TUD laptop
+- name: Laptop (TUD managed)
   id: tulaptop
   infoline: Your TUD configured and managed laptop
   info: |
@@ -178,7 +178,7 @@ solutions:
       <dt>More information</dt><dd><p>For more information please contact the <a href="https://www.uu.nl/it-servicedesk">IT servicedesk</a></p>
       </dd>
     </dl>
-- name: Private laptop
+- name: Laptop (Self managed)
   id: laptop
   infoline: Your private device that is not managed by TU delft
   info: |
@@ -253,17 +253,19 @@ solutions:
       <li>You can recover the backups of lost documents using the previous versions option without the involvement of a Service Point employee. This can be done to recover files up to two weeks back</li>
 - name: TUD Group Data Storage (M:)
   id: m-schijf
-  infoline: Common storage facilities for employees in the same workgroup, department or research group.
+  infoline: Common storage facilities for employees in a department or research group.
   info: |
     Group data storage, also referred to as folders, is a communal storage facility for a number of 
-    users in the same tutorial, department or research group. The standard storage space for a group folder is 50 gigabytes
+    users in the same department or research group. The standard storage space for a group folder is 50 gigabytes
 - name: TUD Bulk Data Storage (N:)
   id: n-schijf
   infoline: Common storage facilities for staff groups.
   info: |
+    <p>
     Bulk data storage for staff of TU Delft. 
-    <br/>
-    Do NOT use this for research data!
+    </p>
+    Do <b>NOT</b> use this for research data! We have included this entry in this list only to
+    emphasise that you shouldn't use it! If you need storage similar to bulk please use Project Data Storage.
 - name: TUD Project Data Storage (U:)
   id: u-schijf
   infoline: Data storage for research
