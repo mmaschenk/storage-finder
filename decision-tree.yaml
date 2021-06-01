@@ -1,5 +1,5 @@
 input:
-- question: "Do you need an advise about the storage for your research data?"
+- question: "Do you need advise about the storage for your research data?"
   id: 1
   info: "Storage for your research data often may require to be secured, backed up, has possibility to share/limit access to the internal and external colleagues. Often you won't have access to the storage provided by the TU Delft once your contract is over. Please check different storage cards for more details. "
   answers:
